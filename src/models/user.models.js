@@ -62,7 +62,7 @@ userSchema.pre("save", async function (next) {
     this.password = await bcrypt.hash(this.password, 10);
     next();
   } catch (error) {
-    next(error); // Passes the error to Mongoose middleware handling
+    next(error);
   }
 });
 
@@ -72,7 +72,7 @@ userSchema.methods.isPasswordCorrect = async function (password) {
     return await bcrypt.compare(password, this.password);
   } catch (error) {
     console.error("Error comparing passwords:", error);
-    throw error; // Propagates the error to your controller
+    throw error;
   }
 };
 
