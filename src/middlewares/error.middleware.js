@@ -28,7 +28,9 @@ const errorHandler = (err, req, res, next) => {
   };
 
   // Return error response
-  return res.status(error.statusCode).json(response);
+  return res
+  .status(error.statusCode)
+  .json(response);
 };
 
 export { errorHandler };

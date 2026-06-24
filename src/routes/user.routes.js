@@ -25,7 +25,6 @@ router.route("/register").post(
 router.route("/login").post(loginUser)
 router.route("/refresh-token").post(refreshAccessToken);
 
-
 //secured routes
 
 router.route("/logout").post(verifyJWT,logoutUser);
@@ -35,7 +34,6 @@ router.route("/current-user").post(verifyJWT, getCurrentUser);
 router.route("/c/:username").post(verifyJWT, getUseChannelProfile);
 
 router.route("/update-account").post(verifyJWT, updateAccountDetails);
-
 
 router.route("/avatar").post(verifyJWT,  updateUserAvatar);
 
@@ -49,8 +47,5 @@ updateCoverImage);
 router
   .route("/history")
   .post(verifyJWT, getWatchHistory);
- 
-
-
 
 export default router;
